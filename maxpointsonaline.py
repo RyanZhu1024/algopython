@@ -4,13 +4,17 @@ class Point:
         self.x = a
         self.y = b
 import collections
-from fractions import gcd
+import math
 class Solution:
     def maxPoints(self, points):
         """
         :type points: List[Point]
         :rtype: int
         """
+        def gcd(a, b):
+            if (a or b) < 0:
+                return -math.gcd(a, b)
+            return math.gcd(a, b)
         n = len(points)
         if n < 2:
             return n
