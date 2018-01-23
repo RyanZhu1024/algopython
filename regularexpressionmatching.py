@@ -12,7 +12,7 @@ class Solution:
         dp[0][0] = True
         for i in range(1, n + 1):
             if p[i - 1] == '*':
-                dp[0][i] = dp[0][i - 2] if i > 1 else True #fill first row，
+                dp[0][i] = dp[0][i - 2] if i > 1 else True #fill first row，i - 2 为了匹配空字符串
         for i in range(1, m + 1):
             for j in range(1, n + 1):
                 #处理 . 和 字符相等的情况
