@@ -24,7 +24,7 @@ class Solution:
         for i in range(len(dpback) - 2, -1, -1):
             dpback[i] = max(dpback[i + 1], [sums[i], i], key=lambda item: item[0])
         res, maxVal = [], -sys.maxsize
-        for i in range(k, len(sums) - k):
+        for i in range(k, len(sums) - k):  # for non overlapping subarray, we start from k
             if sums[i] + dpfront[i - k][0] + dpback[i + k][0] > maxVal:
                 res = [dpfront[i - k][1], i, dpback[i + k][1]]
                 maxVal = sums[i] + dpfront[i - k][0] + dpback[i + k][0]
