@@ -27,8 +27,11 @@ class Solution:
             todo = num % 1000
             num = num // 1000
             if todo > 0:
-                res += [self.thousands[unit]]
-                res += process(todo)
+                res = itertools.chain(res, [self.thousands[unit]], process(todo))
+                # res += [self.thousands[unit]]
+                # res += process(todo)
             unit += 1
         result = [x for x in res if x != '']
         return " ".join(map(str, result[::-1]))
+
+print(Solution().numberToWords(1234567))
