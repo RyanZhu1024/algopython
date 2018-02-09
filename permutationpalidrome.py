@@ -23,7 +23,6 @@ class Solution:
                 visit[i] = False
 
         from collections import Counter
-        import itertools as it
         counter = Counter(s)
         odds = []
         halfs = []
