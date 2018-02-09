@@ -32,6 +32,6 @@ class Solution:
                 # res += process(todo)
             unit += 1
         result = [x for x in res if x != '']
-        return " ".join(map(str, result[::-1]))
+        return " ".join(result[::-1])
 
 print(Solution().numberToWords(1234567))
